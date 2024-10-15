@@ -1,0 +1,7 @@
+.custom-range-middle {
+    background-color: '0000FF' !important; /* Gray background for the middle range */
+    color: white !important; /* White text for contrast */
+  }
+  .rdp-nav{
+    position: relative;
+  }

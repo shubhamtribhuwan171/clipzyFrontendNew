@@ -1,0 +1,138 @@
+/* src/styles/CaptionPreviewCard.css */
+
+.card-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-container.thumbnail {
+    aspect-ratio: auto;
+    height: 100%;
+}
+
+.caption-card {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 100px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.caption-line {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    color: #FFFFFF; /* Default text color */
+    font-weight: normal;
+    font-style: normal;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.highlight {
+    color: #0000FF; /* Blue as per caption_style.json */
+    -webkit-text-stroke: 0.5px #000000;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Current word being spoken */
+.current-word {
+    color: #00FFFF; /* Cyan as per caption_style.json */
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Frame Indicator */
+.frame-indicator {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Controls Styling */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.controls button:hover:not(:disabled) {
+    background-color: #555;
+}
+
+.seek-control,
+.frame-duration-control {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.seek-control label,
+.frame-duration-control label {
+    margin-right: 5px;
+}
+
+.seek-control input,
+.frame-duration-control input {
+    width: 80px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .card-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .caption-line {
+        font-size: 20px;
+    }
+
+    .frame-indicator,
+    .current-time {
+        font-size: 14px;
+    }
+
+    .controls button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .seek-control input,
+    .frame-duration-control input {
+        width: 60px;
+    }
+}
